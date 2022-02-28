@@ -30,11 +30,39 @@ public class PdfParser {
 		PDFTextStripper str = new PDFTextStripper();
 		String data = str.getText(pddoc);
         String lines[] =data.split("\\n");
-        //System.out.println(lines[0]);
-      for (int i = 8; i < lines.length; i++) {
-           System.out.println(lines[i]);
-        }
+        for (int i = 0; i < lines.length; i++) {
+            
+      	  if(lines[i].contains("Payee Name")) {
+      		  
+      		  System.out.println("Payee Name"+""+lines[i].substring(("Payee Name").length()+1,lines[i].length()));
+      	  }else if(lines[i].contains("Nickname")) {
+      		  
+      		  System.out.println(("Nickname")+""+lines[i].substring(("Nickname").length()+1,lines[i].length()));
+      	  }else if(lines[i].contains("Credit Account No")) {
+      		  
+      		 System.out.println(("Credit Account No")+""+lines[i].substring(("Credit Account No").length()+1,lines[i].length()));
+      	  }else if(lines[i].contains("Remarks")) {
+      		System.out.println(("Remarks")+""+lines[i].substring(("Remarks").length()+1,lines[i].length()));
+      	  }else if(lines[i].contains("Debit Account")) {
+      		  
+      		System.out.println(("Debit Account")+""+lines[i].substring(("Debit Account").length()+1,lines[i].length()));  
+      	  }else if(lines[i].contains("Date")){
+      		  
+      		System.out.println(("Date")+""+lines[i].substring(("Date").length()+1,lines[i].length()));  
+      	  }else if(lines[i].contains("Amount")) {
+      		  
+      		System.out.println(("Amount")+""+lines[i].substring(("Amount").length()+1,lines[i].length()));   
+      	  }else if(lines[i].contains("Payment Type")) {
+      		  
+      		System.out.println(("Payment Type")+""+lines[i].substring(("Payment Type").length()+1,lines[i].length()));  
+      	  }else if(lines[i].contains("Pay via")) {
+      		  
+      		System.out.println(("Pay via")+""+lines[i].substring(("Pay via").length()+1,lines[i].length()));   
+      	  }
+   }
+      
 
+      
 
 	}
 }
